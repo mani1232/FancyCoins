@@ -20,9 +20,11 @@ You can download the latest versions at the following places:
 
 ## Commands
 
-/fancycoins
-/coins
-/pay
+/fancycoins - Displays the commands for this Plugin.
+
+/coins -  Shows the amount of coins owned by a specific player
+
+/pay - Pays a certain amount of coins to a specified player
 
 ## Permissions
 
