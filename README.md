@@ -22,6 +22,10 @@ You can download the latest versions at the following places:
 
 /fancycoins - Displays the commands for this Plugin.
 
+/fancycoins reload - plugin config reload
+
+/fancycoins version - checks for a new version of the plugin
+
 /coins increase <player> <count> - Increase a certain amount to a certain vault for a certain player.
   
 /coins decrease <player> <count> - Decrease a certain amount to a certain vault for a certain player.
