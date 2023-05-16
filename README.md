@@ -3,7 +3,7 @@
 ![GitHub Downloads](https://img.shields.io/github/downloads/FancyMcPlugins/FancyCoins/total?logo=GitHub&style=flat-square)
 
 # Fancy Coins
-A simple plugin that adds an economy to your server (coins).
+A simple plugin that adds a secondary coin economy to your server.
 
 **Only supported for 1.19.4** _(might work in other version too tho)_<br>
 _Using [paper](https://papermc.io/downloads) is highly recommended_
@@ -22,9 +22,16 @@ You can download the latest versions at the following places:
 
 /fancycoins - Displays the commands for this Plugin.
 
-/coins -  Shows the amount of coins owned by a specific player
+/coins increase <player> <count> - Increase a certain amount to a certain vault for a certain player.
+  
+/coins decrease <player> <count> - Decrease a certain amount to a certain vault for a certain player.
+  
+/coins top - Show top by vault.
+  
+/coins balance <player> - Show player balance.
 
-/pay - Pays a certain amount of coins to a specified player
+/pay <player> <count> - Pays a certain amount of coins to a specified player.
+
 
 ## Permissions
 
