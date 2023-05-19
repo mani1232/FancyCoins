@@ -9,7 +9,6 @@ import dev.jorel.commandapi.annotations.Subcommand;
 import dev.jorel.commandapi.annotations.arguments.ADoubleArgument;
 import dev.jorel.commandapi.annotations.arguments.AOfflinePlayerArgument;
 import dev.jorel.commandapi.annotations.arguments.AStringArgument;
-import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -96,7 +95,7 @@ public class CoinsCMD {
                     ), () -> MessageHelper.error(player, "You dont have " + vault)
             );
         } else {
-            player.sendMessage(Component.text("You cant send it to " + player.getName()));
+            MessageHelper.error(player, "You cant send it to " + player.getName());
         }
     }
 
