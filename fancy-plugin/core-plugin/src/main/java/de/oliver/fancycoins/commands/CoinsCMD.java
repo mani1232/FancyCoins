@@ -59,7 +59,7 @@ public class CoinsCMD {
             @AOfflinePlayerArgument OfflinePlayer toPlayer,
             @AStringArgument String vault
     ) {
-        fancyCoins.getVaultsManager().getVaults(toPlayer.getUniqueId()).stream().filter(fancyVault -> fancyVault.getName().equals(vault)).findFirst().ifPresentOrElse(fancyVault -> MessageHelper.success(player, toPlayer.getName() + " balance " + fancyVault.getName() + ": " + fancyVault.getBalance() + fancyVault.getSymbol()), () -> MessageHelper.error(player, "Player dont have " + vault));
+        fancyCoins.getVaultsManager().getVaults(toPlayer.getUniqueId()).stream().filter(fancyVault -> fancyVault.getName().equals(vault)).findFirst().ifPresentOrElse(fancyVault -> MessageHelper.success(player, toPlayer.getName() + " has a balance of " + fancyVault.getBalance() + " Coins "), () -> MessageHelper.error(player, "Player dont have " + vault));
     }
 
     @Subcommand({"top"})
@@ -76,7 +76,7 @@ public class CoinsCMD {
     public static void coinsPay(
             Player player,
             @AOfflinePlayerArgument OfflinePlayer toPlayer,
-            @ADoubleArgument(min = 0.1) double count,
+            @ADoubleArgument(min = 1) double count,
             @AStringArgument String vault
     ) {
         if (player != toPlayer) {
@@ -88,7 +88,7 @@ public class CoinsCMD {
                                     fancyVault.setBalance(fancyVault.getBalance() - count);
                                     fancyCoins.getVaultsManager().updateFancyVault(toPlayer.getUniqueId(), otherFancyVault);
                                     fancyCoins.getVaultsManager().updateFancyVault(player.getUniqueId(), fancyVault);
-                                    MessageHelper.success(player, "You send " + count + fancyVault.getSymbol() + " to " + toPlayer.getName());
+                                    MessageHelper.success(player, "You sent " + count + fancyVault.getSymbol() + " to " + toPlayer.getName());
                                     MessageHelper.success(toPlayer.getPlayer(), "You received " + count + fancyVault.getSymbol() + " by " + player.getName());
                                 }
                             }, () -> MessageHelper.error(player, "Player " + toPlayer.getName() + " dont have " + vault)
